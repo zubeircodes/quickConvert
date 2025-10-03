@@ -12,6 +12,10 @@ const conversionRoutes: Record<string, string> = {
   "in-cm": "/inches-to-cm",
   "kg-lb": "/kg-to-lb",
   "lb-kg": "/lb-to-kg",
+  "°C-°F": "/celsius-to-fahrenheit",
+  "°F-°C": "/fahrenheit-to-celsius",
+  "km-mi": "/km-to-miles",
+  "mi-km": "/miles-to-km",
 };
 
 export function QuickLinks({ onQuickConversion }: QuickLinksProps) {

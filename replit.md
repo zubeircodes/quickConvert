@@ -37,7 +37,12 @@ Preferred communication style: Simple, everyday language.
   - `/inches-to-cm` - Inches to Centimeters converter
   - `/kg-to-lb` - Kilograms to Pounds converter
   - `/lb-to-kg` - Pounds to Kilograms converter
+  - `/celsius-to-fahrenheit` - Celsius to Fahrenheit converter
+  - `/fahrenheit-to-celsius` - Fahrenheit to Celsius converter
+  - `/km-to-miles` - Kilometers to Miles converter
+  - `/miles-to-km` - Miles to Kilometers converter
 - Each SEO page has unique title, meta description, and pre-configured units
+- Popular conversions section appears on all pages for internal linking
 - 404 fallback for invalid routes
 
 **Key Features Implementation**
