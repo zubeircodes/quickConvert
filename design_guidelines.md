@@ -2,59 +2,62 @@
 
 ## Design Approach
 
-**Selected Approach**: Custom Utility-Focused Design System
-**Rationale**: This is a utility-first application where efficiency, clarity, and usability are paramount. The design should feel modern and polished while staying out of the way of the core functionality - instant, accurate unit conversions.
+**Selected Approach**: Minimal, Refined Design System
+**Rationale**: This is a utility-first application where efficiency, clarity, and usability are paramount. The design uses a minimal aesthetic with refined colors and clean typography, staying out of the way of the core functionality - instant, accurate unit conversions.
 
 ## Core Design Principles
 
-1. **Clarity Over Decoration**: Every visual element serves the conversion workflow
-2. **Instant Feedback**: Visual confirmation of all user actions
-3. **Scan-ability**: Users should quickly identify input fields, results, and actions
-4. **Breathing Room**: Generous spacing prevents cognitive overload with numbers
+1. **Minimal & Clean**: Simple, refined design with no unnecessary animations or effects
+2. **Clarity Over Decoration**: Every visual element serves the conversion workflow
+3. **Refined Color Palette**: Sophisticated indigo/purple primary color with subtle grays
+4. **Scan-ability**: Users should quickly identify input fields, results, and actions
+5. **Breathing Room**: Generous spacing prevents cognitive overload with numbers
 
 ---
 
 ## Color Palette
 
 ### Light Mode
-- **Background**: 0 0% 100% (pure white)
-- **Surface**: 0 0% 98% (subtle off-white for cards)
-- **Surface Elevated**: 0 0% 100% with subtle shadow
-- **Primary**: 217 91% 60% (modern blue - trustworthy, professional)
-- **Primary Hover**: 217 91% 55%
-- **Text Primary**: 220 9% 15% (near-black for readability)
-- **Text Secondary**: 220 9% 46%
-- **Border**: 220 13% 91%
+- **Background**: 0 0% 99% (off-white, minimal)
+- **Card**: 0 0% 100% (pure white for contrast)
+- **Primary**: 240 80% 60% (refined indigo/purple - sophisticated)
+- **Text Primary**: 215 20% 15% (dark for strong readability)
+- **Text Secondary**: 215 15% 45% (muted for hierarchy)
+- **Border**: 220 15% 90% (light and clean)
+- **Muted**: 220 12% 92% (subtle backgrounds)
 - **Success**: 142 71% 45% (conversion confirmed)
-- **Error**: 0 84% 60% (invalid inputs)
+- **Error**: 0 70% 55% (invalid inputs)
 
 ### Dark Mode
-- **Background**: 222 47% 11%
-- **Surface**: 217 33% 17%
-- **Surface Elevated**: 215 28% 22%
-- **Primary**: 217 91% 60% (same as light for consistency)
-- **Text Primary**: 210 20% 98%
-- **Text Secondary**: 217 19% 72%
-- **Border**: 217 19% 27%
+- **Background**: 220 20% 10% (deep, refined dark)
+- **Card**: 220 18% 14% (slightly elevated)
+- **Primary**: 240 80% 65% (same indigo family)
+- **Text Primary**: 0 0% 98% (crisp white)
+- **Text Secondary**: 220 10% 65% (softer for hierarchy)
+- **Border**: 220 15% 22% (subtle separation)
+- **Muted**: 220 15% 22% (dark backgrounds)
 
-**Accent Colors**: Use sparingly for quick action buttons and highlights
-- **Accent**: 142 71% 45% (green for positive actions like "swap" or "copy")
+**Design Note**: Colors are chosen for a minimal, professional aesthetic with no bright or overly saturated tones.
 
 ---
 
 ## Typography
 
-**Font Stack**: System font stack for instant loading and native feel
+**Primary Font**: Space Grotesk (Google Fonts) - Modern, geometric sans-serif
+- Used for: All h1 headings and logo text
+- Weight: 600 (semibold)
+- Letter spacing: -0.02em (tighter, more refined)
+
+**Body Font**: System font stack for instant loading and native feel
 - `font-sans`: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif
 
 ### Hierarchy
-- **Hero Numbers** (conversion results): text-4xl md:text-5xl, font-semibold
-- **H1** (page title): text-3xl md:text-4xl, font-bold
+- **H1** (page title, logo): text-2xl md:text-3xl, font-semibold (Space Grotesk)
 - **H2** (section headers): text-2xl, font-semibold
-- **H3** (category names): text-xl, font-semibold
+- **Hero Numbers** (conversion results): text-3xl md:text-4xl, font-semibold
 - **Body**: text-base, font-normal
 - **Small** (labels, hints): text-sm
-- **Unit Labels**: text-sm, font-medium, uppercase tracking-wide
+- **Muted Text**: text-sm, text-muted-foreground
 
 ---
 
@@ -135,21 +138,22 @@
 
 ---
 
-## Animations & Interactions
+## Interactions
 
-**Philosophy**: Smooth and purposeful, never distracting
-- All transitions: duration-200 to duration-300
-- Easing: ease-in-out
-- Hover states: Subtle scale or color change
-- Loading states: Simple spinner, not skeleton screens
-- Number changes: Brief fade transition when result updates
+**Philosophy**: Minimal and functional, no unnecessary animations
+- **No animations**: Cards do not lift, translate, or transform on hover
+- **Hover states**: Subtle background elevation only (via hover-elevate utility)
+- **Active states**: Subtle press feedback (via active-elevate-2 utility)
+- **Focus states**: Clear ring outline (ring-2 ring-primary) for accessibility
+- **No transitions**: Instant state changes for a snappier, more responsive feel
 
-**Specific Animations**:
-- Input focus: Ring grows from center (ring-2 ring-primary)
-- Swap button click: 180° rotation
-- Result update: Fade-in with slight slide-up (translate-y-2 to translate-y-0)
-- Error messages: Shake animation (slight horizontal movement)
-- Copy confirmation: Checkmark fade-in with scale
+**Interaction Guidelines**:
+- Input focus: Immediate ring appearance
+- Button click: Subtle background change only
+- No rotating, scaling, or translating elements
+- No fade-in animations
+- No slide animations
+- Keep it simple and immediate
 
 ---
 

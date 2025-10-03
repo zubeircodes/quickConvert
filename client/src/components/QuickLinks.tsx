@@ -38,7 +38,7 @@ export function QuickLinks({ onQuickConversion }: QuickLinksProps) {
             return (
               <Link key={index} href={route}>
                 <Card
-                  className="p-4 cursor-pointer hover-elevate active-elevate-2 transition-transform hover:-translate-y-1"
+                  className="p-4 cursor-pointer hover-elevate active-elevate-2"
                   data-testid={`quick-link-${index}`}
                 >
                   <div className="flex items-center justify-between gap-2">
@@ -58,7 +58,7 @@ export function QuickLinks({ onQuickConversion }: QuickLinksProps) {
           return (
             <Card
               key={index}
-              className="p-4 cursor-pointer hover-elevate active-elevate-2 transition-transform hover:-translate-y-1"
+              className="p-4 cursor-pointer hover-elevate active-elevate-2"
               onClick={() => onQuickConversion(conversion.from, conversion.to, conversion.category)}
               data-testid={`quick-link-${index}`}
             >
