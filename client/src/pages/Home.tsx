@@ -47,10 +47,19 @@ export default function Home() {
 
   useEffect(() => {
     if (currentCategory) {
-      setFromUnit(currentCategory.units[0]);
-      setToUnit(currentCategory.units[1] || currentCategory.units[0]);
+      const validFromUnit = fromUnit && currentCategory.units.includes(fromUnit) 
+        ? fromUnit 
+        : currentCategory.units[0];
+      const validToUnit = toUnit && currentCategory.units.includes(toUnit)
+        ? toUnit
+        : currentCategory.units[1] || currentCategory.units[0];
+      
+      if (validFromUnit !== fromUnit || validToUnit !== toUnit) {
+        setFromUnit(validFromUnit);
+        setToUnit(validToUnit);
+      }
     }
-  }, [currentCategory]);
+  }, [currentCategory, fromUnit, toUnit]);
 
   const handleConversion = useCallback(
     (value: string, from: Unit, to: Unit, result: string) => {
@@ -125,7 +134,9 @@ export default function Home() {
             onCategoryChange={setActiveCategory}
           />
 
-          {currentCategory && fromUnit && toUnit && (
+          {currentCategory && fromUnit && toUnit && 
+           currentCategory.units.includes(fromUnit) && 
+           currentCategory.units.includes(toUnit) && (
             <ConverterWidget
               key={activeCategory}
               units={currentCategory.units}
