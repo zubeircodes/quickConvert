@@ -16,6 +16,10 @@ const conversionRoutes: Record<string, string> = {
   "°F-°C": "/fahrenheit-to-celsius",
   "km-mi": "/km-to-miles",
   "mi-km": "/miles-to-km",
+  "m-ft": "/meters-to-feet",
+  "ft-m": "/feet-to-meters",
+  "L-gal": "/liters-to-gallons",
+  "gal-L": "/gallons-to-liters",
 };
 
 export function QuickLinks({ onQuickConversion }: QuickLinksProps) {

@@ -32,15 +32,13 @@ Preferred communication style: Simple, everyday language.
 **Routing**
 - Wouter for lightweight client-side routing
 - Main homepage (/) with full category selection
-- Dedicated SEO pages for popular conversions:
-  - `/cm-to-inches` - Centimeters to Inches converter
-  - `/inches-to-cm` - Inches to Centimeters converter
-  - `/kg-to-lb` - Kilograms to Pounds converter
-  - `/lb-to-kg` - Pounds to Kilograms converter
-  - `/celsius-to-fahrenheit` - Celsius to Fahrenheit converter
-  - `/fahrenheit-to-celsius` - Fahrenheit to Celsius converter
-  - `/km-to-miles` - Kilometers to Miles converter
-  - `/miles-to-km` - Miles to Kilometers converter
+- 12 dedicated SEO pages for popular conversions:
+  - `/cm-to-inches` & `/inches-to-cm` - Length conversions (cm ↔ in)
+  - `/kg-to-lb` & `/lb-to-kg` - Weight conversions (kg ↔ lb)
+  - `/celsius-to-fahrenheit` & `/fahrenheit-to-celsius` - Temperature conversions (°C ↔ °F)
+  - `/km-to-miles` & `/miles-to-km` - Distance conversions (km ↔ mi)
+  - `/meters-to-feet` & `/feet-to-meters` - Length conversions (m ↔ ft)
+  - `/liters-to-gallons` & `/gallons-to-liters` - Volume conversions (L ↔ gal)
 - Each SEO page has unique title, meta description, and pre-configured units
 - Popular conversions section appears on all pages for internal linking
 - 404 fallback for invalid routes

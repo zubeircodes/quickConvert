@@ -12,6 +12,10 @@ import CToF from "@/pages/CToF";
 import FToC from "@/pages/FToC";
 import KmToMi from "@/pages/KmToMi";
 import MiToKm from "@/pages/MiToKm";
+import MToFt from "@/pages/MToFt";
+import FtToM from "@/pages/FtToM";
+import LToGal from "@/pages/LToGal";
+import GalToL from "@/pages/GalToL";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -26,6 +30,10 @@ function Router() {
       <Route path="/fahrenheit-to-celsius" component={FToC} />
       <Route path="/km-to-miles" component={KmToMi} />
       <Route path="/miles-to-km" component={MiToKm} />
+      <Route path="/meters-to-feet" component={MToFt} />
+      <Route path="/feet-to-meters" component={FtToM} />
+      <Route path="/liters-to-gallons" component={LToGal} />
+      <Route path="/gallons-to-liters" component={GalToL} />
       <Route component={NotFound} />
     </Switch>
   );
