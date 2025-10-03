@@ -5,6 +5,7 @@ import { CategoryTabs } from "@/components/CategoryTabs";
 import { ConverterWidget } from "@/components/ConverterWidget";
 import { QuickLinks } from "@/components/QuickLinks";
 import { RecentConversions } from "@/components/RecentConversions";
+import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { categories, type Unit } from "@shared/conversions";
 import { findUnitBySymbolOrName } from "@/lib/conversion";
 import { useRecentConversions } from "@/hooks/useRecentConversions";
@@ -116,6 +117,8 @@ export default function Home() {
       </header>
 
       <main className="container mx-auto px-4 py-8 max-w-6xl space-y-12">
+        <AdPlaceholder format="horizontal" />
+
         <div className="space-y-6">
           <CategoryTabs
             activeCategory={activeCategory}
@@ -133,6 +136,8 @@ export default function Home() {
           )}
         </div>
 
+        <AdPlaceholder format="horizontal" />
+
         {recent.length > 0 && (
           <RecentConversions
             conversions={recent}
@@ -142,6 +147,8 @@ export default function Home() {
         )}
 
         <QuickLinks onQuickConversion={handleQuickConversion} />
+
+        <AdPlaceholder format="horizontal" />
       </main>
 
       <footer className="border-t border-border mt-16">
