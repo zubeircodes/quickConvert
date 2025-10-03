@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { ConverterWidget } from "@/components/ConverterWidget";
+import { QuickLinks } from "@/components/QuickLinks";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { categories, type Unit } from "@shared/conversions";
 import { ArrowLeft } from "lucide-react";
@@ -114,6 +115,8 @@ export default function ConversionPage({
             </Button>
           </Link>
         </div>
+
+        <QuickLinks onQuickConversion={() => {}} />
 
         <AdPlaceholder format="horizontal" />
       </main>
