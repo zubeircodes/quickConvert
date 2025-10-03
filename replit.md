@@ -31,7 +31,14 @@ Preferred communication style: Simple, everyday language.
 
 **Routing**
 - Wouter for lightweight client-side routing
-- Single main route (Home) with 404 fallback
+- Main homepage (/) with full category selection
+- Dedicated SEO pages for popular conversions:
+  - `/cm-to-inches` - Centimeters to Inches converter
+  - `/inches-to-cm` - Inches to Centimeters converter
+  - `/kg-to-lb` - Kilograms to Pounds converter
+  - `/lb-to-kg` - Pounds to Kilograms converter
+- Each SEO page has unique title, meta description, and pre-configured units
+- 404 fallback for invalid routes
 
 **Key Features Implementation**
 - Real-time conversion with debounced input (300ms delay)
