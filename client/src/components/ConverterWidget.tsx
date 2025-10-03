@@ -39,6 +39,12 @@ export function ConverterWidget({
       return;
     }
 
+    if (!units.includes(fromUnit) || !units.includes(toUnit)) {
+      setError("Units must be from the same category!");
+      setToValue("");
+      return;
+    }
+
     const parsed = parseInputValue(debouncedFromValue);
     
     if (parsed === null) {
@@ -55,12 +61,24 @@ export function ConverterWidget({
     if (onConversion && formatted !== "Error") {
       onConversion(debouncedFromValue, fromUnit, toUnit, formatted);
     }
-  }, [debouncedFromValue, fromUnit, toUnit, onConversion]);
+  }, [debouncedFromValue, fromUnit, toUnit, onConversion, units]);
 
   const handleSwap = () => {
     setFromUnit(toUnit);
     setToUnit(fromUnit);
     setFromValue(toValue);
+  };
+
+  const handleFromUnitChange = (unit: Unit) => {
+    if (units.includes(unit)) {
+      setFromUnit(unit);
+    }
+  };
+
+  const handleToUnitChange = (unit: Unit) => {
+    if (units.includes(unit)) {
+      setToUnit(unit);
+    }
   };
 
   const handleCopy = async () => {
@@ -91,7 +109,7 @@ export function ConverterWidget({
           <UnitSelect
             units={units}
             value={fromUnit}
-            onValueChange={setFromUnit}
+            onValueChange={handleFromUnitChange}
             placeholder="Select unit"
             testId="select-from-unit"
           />
@@ -139,7 +157,7 @@ export function ConverterWidget({
           <UnitSelect
             units={units}
             value={toUnit}
-            onValueChange={setToUnit}
+            onValueChange={handleToUnitChange}
             placeholder="Select unit"
             testId="select-to-unit"
           />
