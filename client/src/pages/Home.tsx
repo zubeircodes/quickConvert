@@ -120,7 +120,7 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <header className="border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-2xl md:text-3xl font-bold">Unit Converter</h1>
+          <h1 className="text-2xl md:text-3xl font-bold">Quick Convert</h1>
           <ThemeToggle />
         </div>
       </header>
