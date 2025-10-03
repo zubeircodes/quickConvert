@@ -65,7 +65,7 @@ export default function ConversionPage({
                 <ArrowLeft className="h-5 w-5" />
               </Button>
             </Link>
-            <h1 className="text-2xl md:text-3xl font-bold">Quick Convert</h1>
+            <h1 className="text-2xl md:text-3xl font-bold text-primary">Quick Convert</h1>
           </div>
           <ThemeToggle />
         </div>
