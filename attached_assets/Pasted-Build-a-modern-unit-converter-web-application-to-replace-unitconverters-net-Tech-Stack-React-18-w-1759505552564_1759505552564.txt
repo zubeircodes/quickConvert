@@ -1,0 +1,151 @@
+Build a modern unit converter web application to replace unitconverters.net
+Tech Stack:
+
+React 18+ with TypeScript and Vite
+Tailwind CSS for styling
+No backend (pure client-side)
+
+Core Requirements:
+1. Design:
+
+Modern, minimal interface with generous spacing
+Mobile-first responsive design
+Smooth animations and transitions
+Clean color palette (avoid the dated blue/green from original)
+
+2. Main Features:
+
+Two-way converter widget with swap button
+Search autocomplete for finding units
+Live conversion as you type (debounced)
+Support for fractions (e.g., "1/2" input)
+Copy result to clipboard
+Recent conversions (localStorage)
+URL sharing (e.g., /convert?value=5&from=km&to=miles)
+
+3. Conversion Logic (from source code):
+The original site uses a base unit system. Study this pattern from homeunit.js:
+javascript// Example: Length conversions
+lA[1] = ["Meter","iv","iv"]  // Base unit
+lA[2] = ["Kilometer","iv*1000","iv/1000"]  // To base, From base
+lA[9] = ["Foot","iv*0.3048","iv/0.3048"]
+TypeScript structure:
+typescripttype ConversionFormula = {
+  name: string;
+  toBase: string;    // formula to convert TO base unit
+  fromBase: string;  // formula to convert FROM base unit
+  symbol?: string;
+};
+
+type Category = {
+  name: string;
+  baseUnit: string;
+  units: ConversionFormula[];
+};
+4. Temperature Special Case:
+Temperature needs offset formulas (not just multiplication):
+javascript// From source: 
+tA[2] = ["Kelvin","iv - 273.15","iv + 273.15"]
+tA[3] = ["Fahrenheit","5/9*(iv-32)","9/5*iv + 32"]
+Handle these with formula evaluation (safely, NOT using eval()).
+5. Core Categories with Exact Formulas:
+Length (base: Meter):
+
+Meter: 1
+Kilometer: 1000
+Centimeter: 0.01
+Millimeter: 0.001
+Mile: 1609.344
+Yard: 0.9144
+Foot: 0.3048
+Inch: 0.0254
+
+Weight (base: Kilogram):
+
+Kilogram: 1
+Gram: 0.001
+Pound: 0.453592
+Ounce: 0.0283495
+Ton (metric): 1000
+
+Temperature (special formulas):
+
+Celsius: base
+Kelvin: C = K - 273.15, K = C + 273.15
+Fahrenheit: C = 5/9*(F-32), F = 9/5*C + 32
+
+Volume (base: Cubic Meter):
+
+Cubic Meter: 1
+Liter: 0.001
+Milliliter: 0.000001
+Gallon (US): 0.00378541
+Cup (US): 0.000236588125
+
+6. Number Formatting:
+Replicate the gnumberFormat function:
+
+Handle scientific notation for very large/small numbers
+Precision: ~12 significant digits
+Remove trailing zeros after decimal
+Format: "1.23E+5" for exponential notation
+
+7. Unit Search Feature:
+The original has a smart search that finds units by:
+
+Full name match
+Abbreviation match
+Partial name match (starts with)
+
+Build autocomplete that searches through all units and shows:
+
+Unit name
+Category
+Common conversions
+
+8. UI Components:
+src/
+├── components/
+│   ├── ConverterWidget.tsx (main converter)
+│   ├── UnitSelect.tsx (searchable dropdown)
+│   ├── SwapButton.tsx
+│   ├── QuickLinks.tsx (popular conversions)
+│   └── Calculator.tsx (optional: scientific calc)
+├── data/
+│   └── conversions.ts (all unit data)
+├── utils/
+│   ├── convert.ts (conversion engine)
+│   ├── format.ts (number formatting)
+│   └── formula.ts (safe formula evaluation)
+└── hooks/
+    ├── useConversion.ts
+    └── useRecentConversions.ts
+9. Safe Formula Evaluation:
+DO NOT use eval(). Instead, parse and evaluate formulas safely:
+typescriptfunction evaluateFormula(formula: string, value: number): number {
+  // Replace 'iv' with actual value
+  // Parse math operations safely
+  // Return result
+}
+10. Popular Conversions (Quick Links):
+Include these common ones from source:
+
+cm to inches / inches to cm
+kg to lbs / lbs to kg
+Celsius to Fahrenheit / Fahrenheit to Celsius
+km to miles / miles to km
+liters to gallons / gallons to liters
+
+11. Error Handling:
+
+Invalid number input: "Please provide a valid number!"
+Division by zero
+Out of range values
+Unsupported conversions
+
+12. Advanced Features (nice to have):
+
+Fraction to decimal display for feet/inches
+Calculator modal (basic scientific functions)
+Batch conversion (show result in multiple units)
+Comparison mode (5km is how many miles, feet, etc.)
