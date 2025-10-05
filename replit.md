@@ -4,6 +4,15 @@
 
 A modern, client-side unit converter web application built with React 18, TypeScript, and Vite. The application provides fast, accurate conversions across multiple categories (length, weight, temperature, volume, area, time) with a clean, utility-focused interface. Designed as a replacement for legacy converter sites with emphasis on instant feedback, mobile-first responsiveness, and smooth user experience.
 
+## Recent Changes (October 2025)
+
+- **Fixed Critical Bug**: Resolved infinite loop in ConverterWidget component that caused app crashes on mobile by removing unstable dependencies (onConversion, units) from useEffect
+- **AdSense Integration**: Added Google AdSense Auto Ads for monetization (publisher ID: ca-pub-5202459787115294)
+  - Script loads in `<head>` for all pages
+  - Auto Ads will automatically optimize placement and formats
+  - Removed placeholder ad components in favor of Auto Ads approach
+- **Brand Identity**: Added favicon with conversion arrow design (blue theme, SVG format)
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
