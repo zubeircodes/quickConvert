@@ -161,3 +161,42 @@ interface Category {
 - **@replit/vite-plugin-***: Replit-specific development enhancements
 - **esbuild**: JavaScript bundler for server code
 - **tsx**: TypeScript execution for development server
+
+## Deployment
+
+### Deploying to Vercel
+
+This application is configured for easy deployment to Vercel as a static site. The app is purely client-side with no backend dependencies, making it ideal for static hosting.
+
+**Configuration Files**
+- `vercel.json` - Configures build settings and SPA routing
+- `.vercelignore` - Excludes unnecessary files from deployment
+
+**Steps to Deploy:**
+
+1. **Push to GitHub**
+   - Create a new repository on GitHub
+   - Push your code to the repository
+
+2. **Import to Vercel**
+   - Go to [vercel.com](https://vercel.com) and sign in
+   - Click "Add New Project"
+   - Import your GitHub repository
+
+3. **Deploy**
+   - Vercel will automatically detect the `vercel.json` configuration
+   - Build command: `vite build`
+   - Output directory: `dist/public`
+   - Click "Deploy"
+
+4. **Add Custom Domain** (Optional)
+   - Go to Project Settings → Domains
+   - Add your custom domain
+   - Update your DNS records as instructed by Vercel
+   - Vercel automatically handles SSL certificates
+
+**How It Works:**
+- Vercel runs `vite build` to create an optimized production build
+- The built files are served from the `dist/public` directory
+- All routes are rewritten to `/index.html` for client-side routing (SPA)
+- The app handles all navigation client-side using wouter
