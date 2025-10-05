@@ -61,7 +61,7 @@ export function ConverterWidget({
     if (onConversion && formatted !== "Error") {
       onConversion(debouncedFromValue, fromUnit, toUnit, formatted);
     }
-  }, [debouncedFromValue, fromUnit, toUnit, onConversion, units]);
+  }, [debouncedFromValue, fromUnit, toUnit]);
 
   const handleSwap = () => {
     setFromUnit(toUnit);
