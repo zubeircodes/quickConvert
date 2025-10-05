@@ -117,6 +117,11 @@ export default function ConversionPage({
       <footer className="border-t border-border mt-16">
         <div className="container mx-auto px-4 py-6 text-center text-sm text-muted-foreground">
           <p>Fast, accurate unit conversions for everyday use</p>
+          <div className="mt-2">
+            <Link href="/privacy-policy" className="hover:text-foreground transition-colors" data-testid="link-privacy-policy">
+              Privacy Policy
+            </Link>
+          </div>
         </div>
       </footer>
     </div>

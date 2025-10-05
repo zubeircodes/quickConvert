@@ -12,6 +12,9 @@ A modern, client-side unit converter web application built with React 18, TypeSc
   - Auto Ads will automatically optimize placement and formats
   - Removed placeholder ad components in favor of Auto Ads approach
 - **Brand Identity**: Added favicon with conversion arrow design (blue theme, SVG format)
+- **Privacy Policy**: Added comprehensive privacy policy page at `/privacy-policy` to meet AdSense approval requirements
+  - Covers data collection, third-party services (AdSense, Google Fonts)
+  - Accessible via footer link on all pages
 
 ## User Preferences
 

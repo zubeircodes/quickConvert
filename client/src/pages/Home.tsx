@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { useLocation } from "wouter";
+import { useLocation, Link } from "wouter";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { CategoryTabs } from "@/components/CategoryTabs";
 import { ConverterWidget } from "@/components/ConverterWidget";
@@ -158,6 +158,11 @@ export default function Home() {
       <footer className="border-t border-border mt-16">
         <div className="container mx-auto px-4 py-6 text-center text-sm text-muted-foreground">
           <p>Fast, accurate unit conversions for everyday use</p>
+          <div className="mt-2">
+            <Link href="/privacy-policy" className="hover:text-foreground transition-colors" data-testid="link-privacy-policy">
+              Privacy Policy
+            </Link>
+          </div>
         </div>
       </footer>
     </div>
