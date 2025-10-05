@@ -3,7 +3,6 @@ import { Link } from "wouter";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { ConverterWidget } from "@/components/ConverterWidget";
 import { QuickLinks } from "@/components/QuickLinks";
-import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { categories, type Unit } from "@shared/conversions";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -81,8 +80,6 @@ export default function ConversionPage({
           </p>
         </div>
 
-        <AdPlaceholder format="horizontal" />
-
         {fromUnit && toUnit && categoryUnits.length > 0 && (
           <div className="space-y-6">
             <ConverterWidget
@@ -93,8 +90,6 @@ export default function ConversionPage({
             />
           </div>
         )}
-
-        <AdPlaceholder format="horizontal" />
 
         <div className="prose prose-sm max-w-none dark:prose-invert">
           <h3>About This Conversion</h3>
@@ -117,8 +112,6 @@ export default function ConversionPage({
         </div>
 
         <QuickLinks onQuickConversion={() => {}} />
-
-        <AdPlaceholder format="horizontal" />
       </main>
 
       <footer className="border-t border-border mt-16">
