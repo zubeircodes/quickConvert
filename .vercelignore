@@ -1,0 +1,12 @@
+server/
+node_modules/
+.git/
+*.log
+.env
+.env.local
+tsconfig.json
+vite.config.ts
+drizzle.config.ts
+design_guidelines.md
+replit.md
+attached_assets/
