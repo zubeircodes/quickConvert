@@ -170,6 +170,7 @@ This application is configured for easy deployment to Vercel as a static site. T
 
 **Configuration Files**
 - `vercel.json` - Configures build settings and SPA routing
+- `vite.config.production.ts` - Production-optimized Vite config (without Replit-specific plugins)
 - `.vercelignore` - Excludes unnecessary files from deployment
 
 **Steps to Deploy:**
@@ -185,7 +186,7 @@ This application is configured for easy deployment to Vercel as a static site. T
 
 3. **Deploy**
    - Vercel will automatically detect the `vercel.json` configuration
-   - Build command: `vite build`
+   - Build command: `vite build --config vite.config.production.ts`
    - Output directory: `dist/public`
    - Click "Deploy"
 
